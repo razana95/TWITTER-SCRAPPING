@@ -12,7 +12,7 @@ Streamlit
 Datetime
 
 
-DEMO:A demo video of the working model is available on  Linkedin.
+#DEMO:A demo video of the working model is available on  Linkedin-https://www.linkedin.com/in/hasna-razhana-473733271/
 
   
 
@@ -66,11 +66,11 @@ else:
     st.write(":blue[select options below]")
     
     
-# DataFrame to JSON file
+#DataFrame to JSON file
 def json_file(data):
     return data.to_json(orient='index')
 
-# DataFrame to CSV file
+#DataFrame to CSV file
 def csv_file(data):
     return data.to_csv().encode('utf-8')
 
