@@ -32,7 +32,7 @@ current_date=str(date.today())
 #SCRAPING TWEETS AND APPENDING IT IN A LIST
 tweets=[]
 for i,tweet in enumerate(sntwitter.TwitterSearchScraper(f'{keyword} since:{start_date} until:{end_date}').get_items()):
-      if i > limit:
+      if i >= limit:
             break
       tweets.append([tweet.id,tweet.user.username,
                             tweet.lang,tweet.date,
