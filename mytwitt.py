@@ -23,7 +23,7 @@ st.write("""
 #SIDEBAR LAYOUT
 st.sidebar.header("**:blue[Give inputs here:point_down:]**")
 keyword=st.sidebar.text_input("Enter hashtag/keyword of the tweet ")
-limit=st.sidebar.number_input("Enter the no.of tweets you want",min_value=1,max_value=5000,step=1)
+limit=st.sidebar.number_input("Enter the no.of tweets you want",min_value=1,max_value=5000,step=10)
 st.sidebar.write(":orange[Enter the date range]")
 start_date=st.sidebar.date_input("Start Date (YYYY-MM-DD) : ")
 end_date=st.sidebar.date_input("End Date (YYYY-MM-DD) : ")
