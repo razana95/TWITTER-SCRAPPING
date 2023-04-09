@@ -9,12 +9,9 @@ import json
 from PIL import Image
 
 
-#client=pymongo.MongoClient("localhost",27017)
-#db=client.my_database
-#collection=db.twitter_data
-# Here starts the main function
+
 def main():
-  #count=0
+ 
   tweets = []
   client=pymongo.MongoClient("localhost",27017)
   db=client.my_database
@@ -58,8 +55,7 @@ def main():
 
   # Menu 3 is a search option
   elif choice=="Search":
-    # Every time after the last tweet the database will be cleared for updating new scraping data
-    #collection.delete_many({})
+    
 
     # Form for collecting user input for twitter scrape
     with st.form(key='form1'):
@@ -99,15 +95,13 @@ def main():
         st.success(f"**:blue[{keyword} _tweets]:thumbsup:**")
         st.write(df)
 
-      #st.write(":blue[select options below]")
+      
     if st.button("upload to mongodb"):
       try:
             df=pd.DataFrame(tweets,columns=['user_id','user_name','language','datetime',
                                'url', 'reply_count','retweet_count', 'like_count', 
                               'tweet_content','source'])
-            #client=pymongo.MongoClient("localhost",27017)
-            #db=client.my_database
-            #collection=db.twitter_data
+            
             documents={"scrapped _word" : keyword,
                        "scrapped _date" : current_date,
                        "scrapped_data" : df.to_dict()
@@ -124,7 +118,7 @@ def main():
     
 
     with b1:
-      #st.write("Download the tweet data as CSV File")
+     
       # save the documents in a dataframe
       df = pd.DataFrame(list(collection.find()))
       # Convert dataframe to csv
@@ -143,7 +137,7 @@ def main():
 
     # Download the scraped data as JSON
     with b2:
-      #st.write("Download the tweet data as JSON File")
+     
       # Convert dataframe to json string instead as json file 
       df = pd.DataFrame(list(collection.find()))
       twtjs = df.to_json(default_handler=str).encode()
