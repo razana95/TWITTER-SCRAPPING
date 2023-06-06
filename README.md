@@ -2,7 +2,7 @@
 I have written two codes and attached both the files with the name mytwitt.py and new.py. my.twitt.py is a basic code to use streamlit and in new.py i have added some more options and image.
 
 
-## TWITTER SCRAPPING:
+### TWITTER SCRAPPING:
     This project aims to scrape Twitter data using the snscrape library, store it in MongoDB, and display the scraped data in a GUI built with Streamlit. The user can enter a keyword or hashtag to search, select a date range, and limit the number of tweets to scrape. The scraped data is displayed in the GUI and can be uploaded to nosql database, downloaded as a CSV or JSON file.
 
 Requirments for this project:
@@ -20,7 +20,7 @@ DEMO:A demo video of the working model is available on  Linkedin-https://www.lin
   
 CODE:1[MYTWITT.PY]
 
-## WORKFLOW:
+### WORKFLOW:
 
 Step 0: pip install all needed libraries.
 
@@ -78,7 +78,7 @@ def csv_file(data):
     return data.to_csv().encode('utf-8')
 
 
-# Creating objects for dataframe and file conversion
+### Creating objects for dataframe and file conversion
 csv =csv_file(df)
 json = json_file(df)
 
