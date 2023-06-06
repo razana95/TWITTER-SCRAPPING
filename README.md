@@ -2,7 +2,7 @@
 I have written two codes and attached both the files with the name mytwitt.py and new.py. my.twitt.py is a basic code to use streamlit and in new.py i have added some more options and image.
 
 
-TWITTER SCRAPPING:
+## TWITTER SCRAPPING:
     This project aims to scrape Twitter data using the snscrape library, store it in MongoDB, and display the scraped data in a GUI built with Streamlit. The user can enter a keyword or hashtag to search, select a date range, and limit the number of tweets to scrape. The scraped data is displayed in the GUI and can be uploaded to nosql database, downloaded as a CSV or JSON file.
 
 Requirments for this project:
@@ -15,12 +15,12 @@ Streamlit
 Datetime
 
 
-#DEMO:A demo video of the working model is available on  Linkedin-https://www.linkedin.com/in/hasna-razhana-473733271/
+DEMO:A demo video of the working model is available on  Linkedin-https://www.linkedin.com/in/hasna-razhana-473733271/
 
   
 CODE:1[MYTWITT.PY]
 
-WORKFLOW:
+## WORKFLOW:
 
 Step 0: pip install all needed libraries.
 
@@ -46,7 +46,7 @@ current_date=str(date.today())
 Step 3: Using snscrape and pandas,Tweets get scraped,converted into Dataframe and displayed in tabular format.
 
 tweets = []
-    # Using for loop, TwitterSearchScraper and enumerate function to scrape data and append tweets to list
+    #Using for loop, TwitterSearchScraper and enumerate function to scrape data and append tweets to list
     for i,tweet in enumerate(sntwitter.TwitterSearchScraper(f"{keyword} since:{start_date} until:{end_date}").get_items()):
         if i >= limit:
             break
@@ -161,14 +161,14 @@ def main():
   menu = ["Home","About","Search","Download"]
   choice = st.sidebar.selectbox("Menu",menu)
 
-  # Menu 1 is Home page 
+  #Menu 1 is Home page 
   if choice=="Home":
     st.write('''This app is a Twitter Scraping web app created using Streamlit. 
              It scrapes the twitter data for the given hashtag/ keyword for the given period.
              The tweets are uploaded in MongoDB and can be dowloaded as CSV or a JSON file.''')
     image=Image.open("imagetwitt.jpeg")#adding image
     st.image(image)
-  # Menu 2 is about the Twitter Scrape libraries, databases and apps
+  #Menu 2 is about the Twitter Scrape libraries, databases and apps
   elif choice=="About":
     # Info about Twitter Scrapper
     with st.expander("Twitter Scrapper"):
@@ -193,9 +193,9 @@ def main():
                   Its easy to share *machine learning and datasciecne web apps* using streamlit.
                   It allows the app to load the large set of datas from web for manipulation and  performing expensive computations.''')
 
-  # Menu 3 is a search option
+  #Menu 3 is a search option
   elif choice=="Search":
-    # Every time after the last tweet the database will be cleared for updating new scraping data
+    #Every time after the last tweet the database will be cleared for updating new scraping data
     #collection.delete_many({})
 
     #step:4--Form for collecting user input for twitter scrape
